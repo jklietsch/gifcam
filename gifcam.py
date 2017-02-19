@@ -23,7 +23,7 @@ num_pics = 8 #Number of pictures to take in Gif
 gif_delay = 15 #How much delay in between those pictures (in milliseconds)    
 
 camera = picamera.PiCamera()
-camera.resolution = (1800, 1800)
+camera.resolution = (800, 800)
 camera.rotation = 270
 
 ###############
