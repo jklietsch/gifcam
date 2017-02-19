@@ -26,12 +26,11 @@ camera = picamera.PiCamera()
 #camera.resolution = (540, 405)
 #camera.resolution = (2592, 1944)
 camera.resolution = (800, 800)
-camera.rotation = 270
+camera.rotation = 0
 #camera.brightness = 70
 camera.image_effect = 'none'
 GPIO.output(led_2, 1)
-#print('System Ready')
-print('Processing')
+print('System Ready')
 
 def random_generator(size=10, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for x in range(size))
@@ -46,18 +45,16 @@ while True:
     		camera.capture('image{0:04d}.jpg'.format(i))
         filename = '/home/pi/gifcam/gifs/' + dailygif + '-0'
         GPIO.output(led_1, 0)
-    	#print('Processing')
-        print('System Ready')
+    	print('Processing')
         graphicsmagick = "gm convert -delay " + str(gif_delay) + " " + "*.jpg " + filename + ".gif" 
         os.system(graphicsmagick)
         print('Done')
-        #print('System Ready')
-        print('Processing')
+        print('System Ready')
     else :
         # Switch on LED
-        #GPIO.output(led_1, 1)
-        #time.sleep(0.35)
-        #GPIO.output(led_1, 0)
-        #time.sleep(0.35)
+        GPIO.output(led_1, 1)
+        time.sleep(0.35)
+        GPIO.output(led_1, 0)
+        time.sleep(0.35)
         
        
