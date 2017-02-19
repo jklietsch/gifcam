@@ -27,6 +27,7 @@ camera = picamera.PiCamera()
 #camera.resolution = (2592, 1944)
 camera.resolution = (800, 800)
 camera.rotation = 0
+camera.iso = 800
 #camera.brightness = 70
 camera.image_effect = 'none'
 GPIO.output(led_2, 1)
@@ -43,7 +44,7 @@ while True:
         print('Gif Started')
         for i in range(num_pics):
     		camera.capture('image{0:04d}.jpg'.format(i))
-        filename = '/home/pi/gifcam/gifs/' + dailygif + '-0'
+        filename = '/home/pi/gifcam/gifs/' + randomstring + '-0'
         GPIO.output(led_1, 0)
     	print('Processing')
         graphicsmagick = "gm convert -delay " + str(gif_delay) + " " + "*.jpg " + filename + ".gif" 
