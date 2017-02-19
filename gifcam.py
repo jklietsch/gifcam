@@ -23,13 +23,28 @@ num_pics = 8 #Number of pictures to take in Gif
 gif_delay = 15 #How much delay in between those pictures (in milliseconds)    
 
 camera = picamera.PiCamera()
-#camera.resolution = (540, 405)
-#camera.resolution = (2592, 1944)
-camera.resolution = (800, 800)
+camera.resolution = (1800, 1800)
 camera.rotation = 270
-camera.iso = 800
-#camera.brightness = 70
-camera.image_effect = 'none'
+
+###############
+### Effects ###
+###############
+camera.sharpness = 0
+camera.contrast = 0
+camera.brightness = 50
+camera.saturation = 0
+camera.ISO = 0
+camera.video_stabilization = False
+camera.exposure_compensation = 0
+camera.exposure_mode = 'auto'
+camera.meter_mode = 'average'
+camera.awb_mode = 'auto'
+camera.image_effect = 'film'
+camera.color_effects = 128:128
+camera.hflip = False
+camera.vflip = False
+camera.crop = (0.0, 0.0, 1.0, 1.0)
+
 GPIO.output(led_2, 1)
 print('System Ready')
 
