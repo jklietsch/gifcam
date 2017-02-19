@@ -4,6 +4,5 @@
 
 cd /
 cd home/pi/gifcam
-sudo git pull
 sudo python gifcam.py
 cd /
