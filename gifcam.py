@@ -29,21 +29,21 @@ camera.rotation = 270
 ###############
 ### Effects ###
 ###############
-camera.sharpness = 0
-camera.contrast = 0
-camera.brightness = 50
-camera.saturation = 0
-camera.ISO = 0
-camera.video_stabilization = False
-camera.exposure_compensation = 0
-camera.exposure_mode = 'auto'
-camera.meter_mode = 'average'
-camera.awb_mode = 'auto'
+#camera.sharpness = 0
+#camera.contrast = 0
+#camera.brightness = 50
+#camera.saturation = 0
+#camera.ISO = 0
+#camera.video_stabilization = False
+#camera.exposure_compensation = 0
+#camera.exposure_mode = 'auto'
+#camera.meter_mode = 'average'
+#camera.awb_mode = 'auto'
 camera.image_effect = 'film'
 camera.color_effects = 128:128
-camera.hflip = False
-camera.vflip = False
-camera.crop = (0.0, 0.0, 1.0, 1.0)
+#camera.hflip = False
+#camera.vflip = False
+#camera.crop = (0.0, 0.0, 1.0, 1.0)
 
 GPIO.output(led_2, 1)
 print('System Ready')
