@@ -39,8 +39,8 @@ camera.brightness = 70
 #camera.exposure_mode = 'auto'
 #camera.meter_mode = 'average'
 #camera.awb_mode = 'auto'
-camera.image_effect = 'film'
-camera.color_effects = (128,128)
+#camera.image_effect = 'film'
+#camera.color_effects = (128,128)
 #camera.hflip = False
 #camera.vflip = False
 #camera.crop = (0.0, 0.0, 1.0, 1.0)
@@ -53,8 +53,8 @@ def random_generator(size=10, chars=string.ascii_uppercase + string.digits):
 
 while True:
     input_state = GPIO.input(button) # Sense the button
-    randomstring = random_generator()
     if input_state == False:
+        randomstring = random_generator()
         GPIO.output(led_1, 1)
         print('Gif Started')
         for i in range(num_pics):
