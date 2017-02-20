@@ -30,7 +30,7 @@ camera.rotation = 270
 ### Effects ###
 ###############
 #camera.sharpness = 0
-camera.contrast = 50
+camera.contrast = 70
 camera.brightness = 50
 #camera.saturation = 0
 #camera.ISO = 0
