@@ -30,8 +30,8 @@ camera.rotation = 270
 ### Effects ###
 ###############
 #camera.sharpness = 0
-#camera.contrast = 0
-camera.brightness = 70
+camera.contrast = 50
+camera.brightness = 50
 #camera.saturation = 0
 #camera.ISO = 0
 #camera.video_stabilization = False
@@ -39,8 +39,8 @@ camera.brightness = 70
 #camera.exposure_mode = 'auto'
 #camera.meter_mode = 'average'
 #camera.awb_mode = 'auto'
-#camera.image_effect = 'film'
-#camera.color_effects = (128,128)
+camera.image_effect = 'film'
+camera.color_effects = (128,128)
 #camera.hflip = False
 #camera.vflip = False
 #camera.crop = (0.0, 0.0, 1.0, 1.0)
@@ -48,7 +48,7 @@ camera.brightness = 70
 GPIO.output(led_2, 1)
 print('System Ready')
 
-def random_generator(size=10, chars=string.ascii_uppercase + string.digits):
+def random_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for x in range(size))
 
 while True:
@@ -59,7 +59,7 @@ while True:
         print('Gif Started')
         for i in range(num_pics):
     		camera.capture('image{0:04d}.jpg'.format(i))
-        filename = '/home/pi/gifcam/gifs/' + randomstring + '-0'
+        filename = '/home/pi/gifcam/gifs/' + randomstring
         GPIO.output(led_1, 0)
     	print('Processing')
         graphicsmagick = "gm convert -delay " + str(gif_delay) + " " + "*.jpg " + filename + ".gif" 
