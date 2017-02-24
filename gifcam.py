@@ -48,8 +48,19 @@ camera.color_effects = (128,128)
 GPIO.output(led_2, 1)
 print('System Ready')
 
-def random_generator(size=6, chars=string.ascii_uppercase + string.digits):
-    return ''.join(random.choice(chars) for x in range(size))
+def getCurrentNumber():
+    filename = '/home/pi/gifcam/n'
+    n = 0;
+    if os.path.exists(filename):
+        fileObj = open(filename, 'r')
+        nStr = fileObj.read()
+        n = int(nStr)
+        fileObj.close()
+    n += 1
+    fileObj = open(filename, 'w')
+    fileObj.write(str(n))
+    fileObj.close()
+    return n
 
 while True:
     input_state = GPIO.input(button) # Sense the button
@@ -71,19 +82,3 @@ while True:
         time.sleep(0.35)
         GPIO.output(led_1, 0)
         time.sleep(0.35)
-        
-       
-
-def getCurrentNumber():
-    filename = '/home/pi/gifcam/n'
-    n = 0;
-    if os.path.exists(filename):
-        fileObj = open(filename, 'r')
-        nStr = fileObj.read()
-        n = int(nStr)
-        fileObj.close()
-    n += 1
-    fileObj = open(filename, 'w')
-    fileObj.write(str(n))
-    fileObj.close()
-    return n
