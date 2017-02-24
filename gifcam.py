@@ -82,7 +82,7 @@ def getCurrentNumber():
         nStr = fileObj.read()
         n = int(nStr)
         fileObj.close()
-    n++
+    n += 1
     fileObj = open(filename, 'w')
     fileObj.write(str(n))
     fileObj.close()
