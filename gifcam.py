@@ -69,7 +69,7 @@ while True:
         print('Gif Started')
         for i in range(num_pics):
     		camera.capture('image{0:04d}.jpg'.format(i))
-        filename = '/home/pi/gifcam/gifs/' + str(getCurrentNumber)
+        filename = '/home/pi/gifcam/gifs/' + str(getCurrentNumber())
         GPIO.output(led_1, 0)
     	print('Processing')
         graphicsmagick = "gm convert -delay " + str(gif_delay) + " " + "*.jpg " + filename + ".gif" 
