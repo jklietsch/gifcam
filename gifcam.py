@@ -2,9 +2,9 @@ import picamera
 from time import sleep
 import time
 import RPi.GPIO as GPIO
-from os import system
+from os import system, path
 import os
-import random, string
+import string
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
@@ -54,12 +54,11 @@ def random_generator(size=6, chars=string.ascii_uppercase + string.digits):
 while True:
     input_state = GPIO.input(button) # Sense the button
     if input_state == False:
-        randomstring = random_generator()
         GPIO.output(led_1, 1)
         print('Gif Started')
         for i in range(num_pics):
     		camera.capture('image{0:04d}.jpg'.format(i))
-        filename = '/home/pi/gifcam/gifs/' + randomstring
+        filename = '/home/pi/gifcam/gifs/' + str(getCurrentNumber)
         GPIO.output(led_1, 0)
     	print('Processing')
         graphicsmagick = "gm convert -delay " + str(gif_delay) + " " + "*.jpg " + filename + ".gif" 
@@ -74,3 +73,17 @@ while True:
         time.sleep(0.35)
         
        
+
+def getCurrentNumber():
+    filename = '/home/pi/gifcam/n'
+    n = 0;
+    if os.path.exists(filename):
+        fileObj = open(filename, 'r')
+        nStr = fileObj.read()
+        n = int(nStr)
+        fileObj.close()
+    n++
+    fileObj = open(filename, 'w')
+    fileObj.write(str(n))
+    fileObj.close()
+    return n
