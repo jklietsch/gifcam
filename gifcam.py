@@ -24,8 +24,7 @@ gif_delay = 15 #How much delay in between those pictures (in milliseconds)
 
 camera = picamera.PiCamera()
 camera.resolution = (800, 800)
-camera.rotation = 270
-
+camera.rotation = 180
 ###############
 ### Effects ###
 ###############
