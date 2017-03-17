@@ -30,7 +30,7 @@ camera.rotation = 0
 ###############
 #camera.sharpness = 0
 camera.contrast = 0
-camera.brightness = 100
+camera.brightness = 80
 #camera.saturation = 0
 camera.ISO = 800
 #camera.video_stabilization = False
