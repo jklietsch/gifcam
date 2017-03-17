@@ -29,7 +29,7 @@ camera.rotation = 0
 ### Effects ###
 ###############
 #camera.sharpness = 0
-camera.contrast = 0
+camera.contrast = 50
 camera.brightness = 80
 #camera.saturation = 0
 camera.ISO = 800
